@@ -1,0 +1,45 @@
+# SuryaSense - Project Configuration
+# Aditya-L1 Solar Flare Nowcasting and Forecasting Pipeline
+
+project:
+  name: "SuryaSense"
+  version: "0.1.0"
+  description: "Solar flare nowcasting and forecasting using Aditya-L1 (SoLEXS & HEL1OS), validated against GOES-19."
+  seed: 42
+
+paths:
+  raw_solexs: "data/raw/solexs"
+  raw_hel1os: "data/raw/hel1os"
+  raw_goes_avg1m: "data/raw/goes/avg1m"
+  raw_goes_flsum: "data/raw/goes/flsum"
+  extracted_solexs: "data/extracted/solexs"
+  extracted_hel1os: "data/extracted/hel1os"
+  interim: "data/interim"
+  processed: "data/processed"
+  catalog: "data/catalog"
+  models: "models"
+  reports: "reports"
+
+cadence:
+  resample_seconds: 60  # 1-minute uniform UTC grid
+
+instruments:
+  solexs:
+    cadence_sec: 1.0
+  hel1os:
+    cadence_sec: 1.0
+  goes:
+    cadence_sec: 60.0
+
+nowcast:
+  background_window_minutes: 30
+  snr_threshold: 3.0
+  peak_prominence: 0.2
+
+forecast:
+  lead_time_target_minutes: 30
+  history_window_minutes: 60
+  models:
+    - baseline
+    - logistic_regression
+    - xgboost

@@ -1,0 +1,25 @@
+train:
+  start_date: TODO
+  end_date: TODO
+
+validation:
+  start_date: TODO
+  end_date: TODO
+
+test:
+  start_date: TODO
+  end_date: TODO
+
+pilot:
+  start_date: TODO
+  end_date: TODO
+
+exclude_dates:
+  - 2024-07-26
+  - 2024-09-01
+  - 2024-10-02
+  - 2025-02-20
+  - 2026-09-22
+  - 2026-09-23
+
+embargo_minutes: 60
